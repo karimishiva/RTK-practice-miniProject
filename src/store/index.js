@@ -1,5 +1,6 @@
-import {configureStore,createSlice} from '@reduxjs/toolkit'
+import {configureStore,createSlice,createAction} from '@reduxjs/toolkit'
 
+export const reset=createAction('app/reset')
 const moviesSlice=createSlice({
     name:'movie',
     initialState:[],
@@ -11,6 +12,11 @@ const moviesSlice=createSlice({
             const index=state.indexOf(action.payload)
             state.splice(index,1)
         }
+    },
+    extraReducers:(builder)=>{
+        builder.addCase(reset,(state,action)=>{
+            return []
+        })
     }
 })
 
@@ -25,6 +31,11 @@ const songsSlice=createSlice({
            const index=state.indexOf(action.payload)
            state.splice(index,1)
         }
+    },
+    extraReducers:(builder)=>{
+        builder.addCase(reset,(state,action)=>{
+            return []
+        })
     }
 })
 
