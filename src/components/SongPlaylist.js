@@ -3,8 +3,6 @@ import {addSong,removeSong} from '../store'
 import { useDispatch,useSelector } from "react-redux";
 function SongPlaylist() {
   const dispatch=useDispatch()
-  // To Do:
-  // Get list of songs
   const songPlaylist =useSelector((state)=>{
     return state.songs
   })
